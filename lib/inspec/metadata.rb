@@ -71,7 +71,7 @@ module Inspec
     end
 
     def inspec_requirement
-      inspec = params[:supports].find { |x| !x[:inspec].nil? } || {}
+      inspec = params[:supports].find { |x| x.is_a?(Hash) && !x[:inspec].nil? } || {}
       Gem::Requirement.create(inspec[:inspec])
     end
 
