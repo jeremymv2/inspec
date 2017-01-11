@@ -17,6 +17,17 @@ class MyTestResource < Inspec.resource(1)
     '2.0'
   end
 end
+
+class MySubClass < JsonConfig
+  name 'node'
+
+  desc 'A subclass'
+  example 'An example'
+
+  def version
+    '2.0'
+  end
+end
 EOF
   }
 
